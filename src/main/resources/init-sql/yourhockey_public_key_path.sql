@@ -1,0 +1,3 @@
+INSERT INTO public.key_path (key_path_id, source, target_entity, target_param, value) VALUES (1, 'product', 'offer', 'price', 'offer.price');
+INSERT INTO public.key_path (key_path_id, source, target_entity, target_param, value) VALUES (2, 'product', 'brand', 'short_name', 'brand.shortName');
+INSERT INTO public.key_path (key_path_id, source, target_entity, target_param, value) VALUES (3, 'product', 'product', 'age', 'age');

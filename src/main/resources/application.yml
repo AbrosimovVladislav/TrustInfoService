@@ -1,0 +1,43 @@
+server:
+  port: 8086
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
+spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:8085
+        instance:
+          name: TrustInfoService
+  datasource:
+    username: postgres
+    password: root
+    url: jdbc:postgresql://localhost:5432/trustinfo
+    driver-class-name: org.postgresql.Driver
+    initialization-mode: always
+    separator: ;;
+  jpa:
+    show-sql: true
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL9Dialect
+        jdbc.lob.non_contextual_creation: true
+        format_sql: true
+
+  banner:
+    location=banner.txt:
+
+logging:
+  file:
+    name: info-app.log
